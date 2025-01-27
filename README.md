@@ -1,1 +1,0 @@
-# ohjelmointi-syventavat-tekniikat
