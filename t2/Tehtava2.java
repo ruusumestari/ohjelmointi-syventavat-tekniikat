@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.MonthDay;
 
 public class Tehtava2 {
 
@@ -11,8 +12,9 @@ public class Tehtava2 {
 
       LocalDate birthDate = LocalDate.parse(birthdayUser);
       LocalDate today = LocalDate.now();
-
-      int compareValue = today.compareTo(birthDate);
+      MonthDay birthDay = MonthDay.of(birthDate.getMonth(), birthDate.getDayOfMonth());
+      MonthDay currentMonthDay = MonthDay.from(today);
+      int compareValue = currentMonthDay.compareTo(birthDay);
 
       if (compareValue == 0) {
         System.out.println("Hyvää syntymäpäivää!");
@@ -21,6 +23,7 @@ public class Tehtava2 {
       else {
         System.out.println("Tänään ei ole syntymäpäiväsi.");
       }
+
       long daysOld = today.toEpochDay() - birthDate.toEpochDay();
       System.out.println("Olet " + daysOld + " päivää vanha.");
 
